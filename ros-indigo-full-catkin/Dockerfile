@@ -12,7 +12,6 @@ FROM jenniferbuehler/ros-indigo-base-catkin
 
 MAINTAINER Jennifer Buehler
 
-# install ros tutorials packages
 RUN apt-get update && apt-get install -y \
     ros-indigo-desktop-full \
     && rm -rf /var/lib/apt/lists/
