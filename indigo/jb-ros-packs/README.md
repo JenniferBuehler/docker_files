@@ -4,15 +4,15 @@
 
 ### About this image
 
-This docker image is based on [jenniferbuehler/jb-ros-packs](https://hub.docker.com/r/jenniferbuehler/jb-ros-packs/)
-and adds the jb-ros-packs sources.
+This docker image is based on [jenniferbuehler/ros-indigo-full-catkin](https://hub.docker.com/r/jenniferbuehler/ros-indigo-full-catkin)
+and adds the [jb-ros-packs](https://github.com/JenniferBuehler/jb-ros-packs) sources and dependencies.
 
 ### Using the GraspIt! planner 
 
 Notes for using the GraspIt! planning algorithms:
 
 * The GRASPIT environment variable is set to 
-    the folder ``/graspit_home`` on the local image. You can mount
+    the folder ``/graspit_home`` on the image. You can mount
     a folder on your computer to it so that you can use yor own robot files.
 * You will need to connect your display to the docker image,
     because even though the graspit code runs in headless mode,
@@ -59,15 +59,15 @@ For example for the Jaco arm sample files:
 To run the planner with ROS nodes, you need to connect the ROS nodes started from
 different terminals.
 
-**Step 1. First start a network**
+**Step 1. Start a network**
 
 ``sudo docker network create ros-net``
 
-**Step 2. Then, run roscore on a container called "master"**
+**Step 2. Run roscore on a container called "master"**
 
 ``sudo docker run -ti --rm --name master --net ros-net jenniferbuehler/jb-ros-packs roscore``
 
-**Step 3. Now start the planner**
+**Step 3. Start the planner**
 
 *UNDER CONSTRUCTION*
 
