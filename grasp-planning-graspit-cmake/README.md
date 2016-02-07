@@ -2,9 +2,10 @@ This docker image is based on jenniferbuehler/graspit,
 which does not support graphical interfaces with OpenGL,
 because support for this depends on the locally used
 graphics card.
-
-So while you cannot use graspit_simulator (unless you extend this image accordingly),
-you can run the EigenGrasp planner in headless mode.
+The problem is that it looks like the same graphic drivers as the host is required
+in order to enable hardware acceleration. So while you cannot use
+graspit_simulator (unless you extend this image accordingly), you can run
+the Eigengrasp planner in headless mode.
 
 This image installs grasp_planning_graspit
 in the /usr directory of the image after pulling it from my
