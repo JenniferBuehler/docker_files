@@ -14,7 +14,7 @@ Despite the full ROS support incl. Gazebo,
 this docker image does not support graphical interfaces with OpenGL,
 because support for this depends on the locally used graphics card.
 The problem is that it looks like the same graphic drivers as the
-hosts is required in order to enable hardware acceleartion.    
+hosts is required in order to enable hardware acceleration.    
 See also comment in the [DockerHub Gazebo](https://hub.docker.com/_/gazebo/) description,
 *Deployment suggestions -> Devices*.    
 I'm still looking into whether it's possible to run gazebo
