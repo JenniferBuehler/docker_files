@@ -34,6 +34,10 @@ RUN apt-get update && apt-get install -y \
     ros-indigo-household-objects-database-msgs  \
     ros-indigo-manipulation-msgs \
     ros-indigo-object-recognition-msgs \
+    ros-indigo-moveit-core \
+    ros-indigo-moveit-planners-ompl \
+    ros-indigo-moveit-fake-controller-manager \
+    ros-indigo-moveit-simple-controller-manager \
     ros-indigo-roslint \
     && rm -rf /var/lib/apt/lists/
 
@@ -52,12 +56,11 @@ RUN bin/bash -c "cd /catkin_ws/src \
      && rm -rf kinova-ros/jaco_driver \ 
      && rm -rf kinova-ros/jaco_model"
 
+RUN bin/bash -c "echo 'Change text to force re-pulling repos: <text-1>'"
+
 # get graspit git repo
 RUN bin/bash -c "cd /catkin_ws/src \
      && git clone https://github.com/JenniferBuehler/graspit.git"
-
-# XXX test stage: force removal of existing catkin_ws
-RUN bin/bash -c "rm -rf /catkin_ws/src/jb-ros-packs"
 
 # get jb-ros-packs git repo
 RUN bin/bash -c "cd /catkin_ws/src \
